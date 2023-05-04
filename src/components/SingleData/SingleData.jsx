@@ -2,8 +2,10 @@
 
 const SingleData = (props) => {
     // console.log(props);
-    const { image, features, published_in, name } = props.singleData
-    console.log(features);
+    const {id, image, features, published_in, name } = props.singleData
+    const {setUniqueId}=props
+    // console.log(setUniqueId);
+   
     return (
         <div className='text-4xl '>
             <div className="card w-full h-[32rem]  bg-base-100 shadow-2xl ">
@@ -34,9 +36,12 @@ const SingleData = (props) => {
                                 <p className="text-base">{published_in}</p>
                             </div>
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 cursor-pointer">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
+                                <label htmlFor="my-modal-5">
+                                    <svg onClick={()=>setUniqueId(id)}
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 cursor-pointer">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </label>
 
                             </div>
                         </div>
